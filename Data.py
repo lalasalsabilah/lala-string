@@ -4,16 +4,16 @@ from pyrogram.types import InlineKeyboardButton
 class Data:
     # Start Message
     START = """
-Halo {}
-
-Selamat datang {}
-
-Jika kamu tidak percaya bot ini, 
-1) gausah baca pesan ini
-2) blokir bot atau delete chat
-
-Bot ini Bekerja Untuk Membantu Kamu Mendapatkan String Session Via Bot. Rekomendasi Jika Ingin Mengambil String Gunakan Akun Lain, Agar Tidak Delay. Terimakasih
-By @skyzu
+halo {}
+━━━━━━━━━━━━━━━━━━━━━━━━
+jika kamu tidak percaya bot ini, 
+1. gausah baca pesan ini
+2. blokir bot atau delete chat
+━━━━━━━━━━━━━━━━━━━━━━━━
+bot ini membantu kamu mendapatkan
+string session via bot
+━━━━━━━━━━━━━━━━━━━━━━━━
+managed by @lalanashirah
     """
 
     # Home Button
@@ -29,37 +29,32 @@ By @skyzu
     # Rest Buttons
     buttons = [
         [InlineKeyboardButton("sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ", callback_data="generate")],
-        [InlineKeyboardButton("ᴍᴀɪɴᴛᴀɴᴇᴅ ʙʏ​", url="https://t.me/skyzu")],
-        [
-            InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ​​", callback_data="help"),
+       
+      
+          
             InlineKeyboardButton("ᴀʙᴏᴜᴛ​", callback_data="about")
-        ],
-        [InlineKeyboardButton("ɪɴꜰᴏ ʙᴏᴛ ʟᴀɪɴɴʏᴀ​", url="https://t.me/ProjectSkyzu")],
+        
+        
     ]
 
     # Help Message
     HELP = """
-✨ **Available Commands** ✨
+✨ TENTANG BOT INI :
 
-/about - Tentang Bot ini
-/help - This Message
-/start - Mulai Bot
-/generate - Mulai Generating Session
-/cancel - Membatalkan process
-/restart - Membatalkan process
+/about - tentang bot ini
+/help - bantuan
+/start - mulai bot
+/generate - mulai generating session
+/cancel - membatalkan process
+/restart - process membatalkan
 """
 
     # About Message
     ABOUT = """
-**About This Bot** 
+ 
+ bot untuk mengambil pyrogram dan telethon string session by @lalastringbot
 
-Sebuah telegram bot untuk mengambil pyrogram dan telethon string session by @SkyStringBot
+CHANNEL : [join](https://t.me/mmwrld)
 
-Group Support : [Gabung](https://t.me/skyzusupport)
-
-Framework : [Pyrogram](docs.pyrogram.org)
-
-Language : [Python](www.python.org)
-
-Developer : @skyzu
+developer : @lalanashirah
     """
