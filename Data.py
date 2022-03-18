@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardButton
 class Data:
     # Start Message
     START = """
-halo {}
+hallo {}
 ━━━━━━━━━━━━━━━━━━━━━━━━
 jika kamu tidak percaya bot ini, 
 1. gausah baca pesan ini
@@ -39,7 +39,7 @@ managed by @lalanashirah
 
     # Help Message
     HELP = """
-✨ TENTANG BOT INI :
+ TENTANG BOT INI :
 
 /about - tentang bot ini
 /help - bantuan
@@ -52,7 +52,8 @@ managed by @lalanashirah
     # About Message
     ABOUT = """
  
- bot untuk mengambil pyrogram dan telethon string session by @lalastringbot
+ bot untuk mengambil pyrogram dan telethon
+  string session by @lalastringbot
 
 CHANNEL : [join](https://t.me/mmwrld)
 
