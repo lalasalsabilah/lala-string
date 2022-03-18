@@ -22,7 +22,7 @@ from telethon.errors import (
 )
 
 ERROR_MESSAGE = "Oops! An exception occurred! \n\n**Error** : {} " \
-            "\n\nTolong Laporan ke @skyzusupport jika eror " \
+            "\n\nTolong Laporan ke @mmwrld jika eror " \
             "sensitive information and you if want to report this as " \
             "this error message is not being logged by us!"
 
@@ -47,13 +47,13 @@ async def generate_session(bot, msg, telethon=False):
     try:
         api_id = int(api_id_msg.text)
     except ValueError:
-        await api_id_msg.reply('Tidak Benar API_ID (which must be an integer). Please start generating session again.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await api_id_msg.reply(' API_ID salah harap mulai session baru lagi.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
     api_hash_msg = await bot.ask(user_id, 'Tolong Kirim `API_HASH`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     api_hash = api_hash_msg.text
-    phone_number_msg = await bot.ask(user_id, 'Sekarang Kirkm `PHONE_NUMBER` Dengan Kode Nomor. \nExample : `+628xxxxxxx`', filters=filters.text)
+    phone_number_msg = await bot.ask(user_id, 'sekarang kirim `NO_TELEPON` dengan kode nomor. \nExample : `+628xxxxxxx`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     phone_number = phone_number_msg.text
@@ -72,7 +72,7 @@ async def generate_session(bot, msg, telethon=False):
         await msg.reply('`API_ID` and `API_HASH` combination is invalid. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
     except (PhoneNumberInvalid, PhoneNumberInvalidError):
-        await msg.reply('`PHONE_NUMBER` is invalid. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await msg.reply('`PHONE_NUMBER` is invalid. silahkan mulai session baru lagi.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
     try:
         phone_code_msg = await bot.ask(user_id, "Please check for an OTP in official telegram account. If you got it, send OTP here after reading the below format. \nIf OTP is `12345`, **please send it as** `1 2 3 4 5`.", filters=filters.text, timeout=600)
@@ -114,10 +114,10 @@ async def generate_session(bot, msg, telethon=False):
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = "**{} STRING SESSION** \n\n`{}` \n\nSupport Groups @skyzusupport".format("TELETHON" if telethon else "PYROGRAM", string_session)
+    text = "**{} STRING SESSION** \n\n`{}`".format("TELETHON" if telethon else "PYROGRAM", string_session)
     await client.send_message("me", text)
     await client.disconnect()
-    await phone_code_msg.reply("Berhasil Megambil {} string session. \n\nSilahkan cek di Pesan Tersimpan/Saved Message! \n\nBy @ProjectSkyzu".format("telethon" if telethon else "pyrogram"))
+    await phone_code_msg.reply("berhasil mengambil {} string session. \n\nsilahkan cek di pesan tersimpan!".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
